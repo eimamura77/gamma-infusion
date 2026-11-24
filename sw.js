@@ -1,6 +1,6 @@
-const files = {"./icon-192.png":"G+aYz9OK1fow3FDkbcofr/LfGom6XcGdzTDfNgnrzgo=","./icon-512.png":"kT/3KhTMR4YIjt5gZ32t+JcP29+OpYJCvDAMNCYZwT0=","./index.html":"v51gR8M8T8MIrVJGJxDRsdcGmV/tTQF3zE0x7HOs8Fw=","./manifest.webmanifest":"iuNN3xnpptyn1CjseGkfgAkYHTdqf7kaebtCe9bJf5U=","./assets/index-Ba_SwOWE.js":"B6HRq8A5uU+UUCzI5ThpKk6VguM/KS3o7lcH1XUI1C8=","./assets/index-Dj84QOwk.css":"3EjEfIDXgn5Mh4Za/B4zhedqwG+1g5DgwYsM8b1NtCk="}
+const files = {"./icon-192.png":"G+aYz9OK1fow3FDkbcofr/LfGom6XcGdzTDfNgnrzgo=","./icon-512.png":"kT/3KhTMR4YIjt5gZ32t+JcP29+OpYJCvDAMNCYZwT0=","./index.html":"JytupywLYQ7JxuSK0uNhAoeiYZRyfn9N87zjli2ZNnM=","./manifest.webmanifest":"iuNN3xnpptyn1CjseGkfgAkYHTdqf7kaebtCe9bJf5U=","./assets/index-BLAUZ6VX.css":"Lpq1/Q7KwTUG8ZVpCctbp1N0PAcU660EtrCJYtszbgw=","./assets/index-C51c7u32.js":"42Ky5jKNXvqZrWp8glRM5ejRQH6wnC+f/udYpRQlmH8="}
 const prefix = 'gamma-infusion:' + self.registration.scope + ':'
-const cacheName = prefix + '69abcfd745ab07d1a2ad'
+const cacheName = prefix + 'fc9b56b1ee4b96112a8f'
 const index = new URL('./index.html', self.registration.scope).href
 const urls = Object.keys(files).map(
   (path) => new URL(path, self.registration.scope).href,
