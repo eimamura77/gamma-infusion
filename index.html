@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f2f5f5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <title>ガンマ・輸液計算</title>
+    <script type="module" crossorigin src="./assets/index-Ba_SwOWE.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dj84QOwk.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>ガンマ・輸液計算</h1>
+        <button id="settings">設定</button>
+      </header>
+      <p id="status" role="alert" hidden></p>
+      <section>
+        <h2>お気に入り薬剤</h2>
+        <div id="groups" class="rail"></div>
+      </section>
+      <section>
+        <div class="prep-heading">
+          <h2>調製方法</h2>
+          <small id="saving" role="status"></small>
+        </div>
+        <select id="recipes" aria-label="調製方法"></select
+        ><button id="addMissing" hidden>調製方法を登録</button>
+        <fieldset id="fields">
+          <div class="row">
+            <label
+              >薬剤量<span class="field"
+                ><input
+                  id="amount"
+                  aria-label="薬剤量"
+                  inputmode="decimal" /><select
+                  id="unit"
+                  aria-label="薬剤量の単位"
+                ></select></span
+            ></label>
+            <label
+              >最終液量<span class="field"
+                ><input id="volume" inputmode="decimal" /><b>mL</b></span
+              ></label
+            >
+          </div>
+          <div class="concentration">
+            <span>薬液濃度</span><strong id="concentration"></strong>
+          </div>
+        </fieldset>
+      </section>
+      <section>
+        <div class="row">
+          <label>投与単位<select id="rate"></select></label
+          ><label id="weightLabel"
+            >体重<span class="field"
+              ><input id="weight" inputmode="decimal" /><b>kg</b></span
+            ></label
+          >
+        </div>
+        <h2>計算方向</h2>
+        <div class="switch">
+          <button id="forward">投与量 → 流速</button
+          ><button id="reverse">流速 → 投与量</button>
+        </div>
+        <label
+          ><span id="inputName">投与量</span
+          ><span class="field"
+            ><input id="value" inputmode="decimal" /><b
+              id="inputUnit"
+            ></b></span
+        ></label>
+      </section>
+    </main>
+    <footer>
+      <div class="summary">
+        <div>
+          <small id="resultName"></small>
+          <div class="answer">
+            <output id="result">—</output> <span id="resultUnit"></span>
+          </div>
+        </div>
+        <button id="done" hidden>完了</button>
+      </div>
+    </footer>
+    <dialog id="panel">
+      <header>
+        <h2>設定</h2>
+        <button id="close">閉じる</button>
+      </header>
+      <p id="panelError" role="alert" hidden></p>
+      <h3>薬剤管理</h3>
+      <div id="management"></div>
+      <button id="newGroup">薬剤を追加</button>
+      <h3>データ管理</h3>
+      <div class="actions">
+        <button id="export">バックアップを保存</button
+        ><button id="import">ファイルから復元</button
+        ><input
+          type="file"
+          id="file"
+          accept=".json,application/json"
+          hidden
+        /><button id="reset" class="danger">全設定を初期化</button>
+      </div>
+      <h3>アプリ情報</h3>
+      <p>
+        バージョン 1.0.0<br />オフライン利用：<span id="offline"
+          >準備が必要</span
+        >
+      </p>
+      <p class="note">
+        薬剤量が製剤の塩量・有効成分量のどちらに相当するか確認してください。
+      </p>
+    </dialog>
+    <dialog id="editor">
+      <form id="form">
+        <h2 id="editorTitle"></h2>
+        <label>表示名（任意）<input id="ename" /></label>
+        <div class="row">
+          <label>薬剤量<input id="ea" inputmode="decimal" required /></label
+          ><label>単位<select id="eu"></select></label>
+        </div>
+        <label
+          >最終液量（mL）<input id="ev" inputmode="decimal" required /></label
+        ><label>既定の投与単位<select id="er"></select></label>
+        <p id="editError" role="alert"></p>
+        <div class="actions">
+          <button type="button" id="cancel">キャンセル</button
+          ><button>保存</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
